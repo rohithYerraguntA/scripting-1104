@@ -3,7 +3,7 @@
 # exercise 1 - vowel counter
 
 # take user input
-user_string = input("enter a sentence: ")
+user_string = input("enter a sentence: ").lower()
 
 #list of vowels
 vowels = ['a', 'e', 'i', 'o', 'u']
