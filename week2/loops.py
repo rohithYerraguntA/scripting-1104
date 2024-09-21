@@ -16,8 +16,9 @@ for each_char in user_string:
     if each_char in vowels:
         index = vowels.index(each_char)
         vowel_count[index] += 1
-
-print(vowel_count)
+# display count of vowels
+for i in range(len(vowels)):
+    print(f'{vowels[i]} - {vowel_count[i]}')
 
 
 
