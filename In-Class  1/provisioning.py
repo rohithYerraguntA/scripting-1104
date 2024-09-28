@@ -19,6 +19,9 @@ required_memory = float(input("enter the required memory: "))
 
 # if condition for checking limits
 if required_CPU_cores > 0 and required_memory > 0 and required_CPU_cores < CPU_cores_available and required_memory < memory_available: 
+
+# if condition to allocate resources   
+    
     if required_CPU_cores <= CPU_cores_available and required_memory <= memory_available:
         print('resources provisioned successfully')
         cpu_cores_left = CPU_cores_available - required_CPU_cores
