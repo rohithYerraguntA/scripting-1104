@@ -23,10 +23,10 @@ requests_pending = []
 # loop to take inputs and to check the limits of the resources
 while True:    
     username = input("enter your username: ")
-    requested_cpu_cores = int(input("enter number of cpu cores required: "))
-    requested_memory = float(input("enter amount of memory: "))
+    requested_cpu_cores = int(input("enter number of cpu cores required (1 - 16): "))
+    requested_memory = float(input("enter amount of memory (1 - 500): "))
     
-    if requested_cpu_cores > 0 and requested_memory > 0 and requested_cpu_cores < cpu_cores_max and requested_memory < memory_max :
+    if requested_cpu_cores > 0 and requested_memory > 0 and requested_cpu_cores <= cpu_cores_max and requested_memory <= memory_max :
         cpu_cores_left = cpu_cores_max - cpu_cores_utilized
         memory_left = memory_max - memory_utilized
         
@@ -39,7 +39,7 @@ while True:
         else:
             requests_pending.append({"username":username, "cpu_cores":requested_cpu_cores, "memory":requested_memory})
     else:
-        print("enter a positive number ")     
+        print("enter a valid number within limit ")     
         
 # asking the user if they want to continue provisioning              
     additional_request = input("do you want to make another request? (yes/no): ").lower()

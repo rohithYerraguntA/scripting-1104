@@ -14,11 +14,11 @@ CPU_cores_available = 16
 memory_available = 500
 
 # User input
-required_CPU_cores = int(input('Enter the number of required CPU cores: '))
-required_memory = float(input("enter the required memory: "))
+required_CPU_cores = int(input('Enter the number of required CPU cores (1 - 16): '))
+required_memory = float(input("enter the required memory (1 - 16): "))
 
 # if condition for checking limits
-if required_CPU_cores > 0 and required_memory > 0 and required_CPU_cores < CPU_cores_available and required_memory < memory_available: 
+if required_CPU_cores > 0 and required_memory > 0 and required_CPU_cores <= CPU_cores_available and required_memory <= memory_available: 
 
 # if condition to allocate resources   
     
@@ -34,7 +34,7 @@ if required_CPU_cores > 0 and required_memory > 0 and required_CPU_cores < CPU_c
         print(" memory left = ", memory_available)
 
 else: 
-    print('enter a valid number')
+    print('enter a valid number within limit')
     
     
     
